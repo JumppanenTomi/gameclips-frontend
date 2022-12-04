@@ -68,7 +68,7 @@ aside.side-panel {
     flex-wrap: wrap;
     height: 100vh;
     justify-items: center;
-    width: 20%
+    max-width: 20%
 }
 
 aside.side-panel>* {
@@ -127,6 +127,9 @@ main {
     width: 80%
 }
 
+main.full {
+    width: 100%;
+}
 nav.logged-in-main,
 nav.logged-in-account {
     display: none
@@ -170,7 +173,8 @@ ul.trending-games {
     padding: 0
 }
 
-ul.trending-games>li>img {
+ul.trending-games>li>img,
+article.game-thumb>img {
     border-radius: 15px;
     cursor: pointer;
     max-width: 100%;
@@ -178,7 +182,14 @@ ul.trending-games>li>img {
     width: 100%
 }
 
-ul.trending-games>li>img:hover {
+ul.trending-games>li>img:hover,
+article.game-thumb>img:hover {
     transform: scale(1.05);
-    transition: .3s
+    transition: .3s;
+    }
+    
+    article.game-thumb>img {
+        max-width: 350px;
+        margin-left: 25px;
+        margin-top: 50px;
 }
