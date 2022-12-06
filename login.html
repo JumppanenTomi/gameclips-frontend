@@ -17,12 +17,12 @@
         <nav class="menu guest-main">
             <ul>
                 <li><a href="./">Home</a></li>
-                <li><a class="active" href="./browse.html">Browse</a></li>
+                <li><a href="./browse.html">Browse</a></li>
             </ul>
         </nav>
         <nav class="menu logged-in-main">
             <ul>
-                <li><a class="active" href="">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="">Browse</a></li>
                 <li><a href="">Favorites</a></li>
                 <li><a href="#upload-clip">Upload own clip</a></li>
@@ -31,7 +31,7 @@
         <nav class="menu guest-registration">
             <ul>
                 <li><a href="./register.html" class="btn-highlight">Register</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li><a href="./login.html" class="active" >Login</a></li>
             </ul>
         </nav>
         <nav class="menu logged-in-account">
@@ -42,19 +42,18 @@
         </nav>
     </header>
     <main class="full">
-        <form action="/" method="GET" class="form">
-            <input type="search" placeholder="Looking for something?" class="search-field" />
-            <button type="submit" class="search-button">
-              <img src="media/search.png">
-            </button>
-          </form>
-          
-        <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                alt="game cover"></article>
-        <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                alt="game cover"></article>
-        <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                alt="game cover"></article>
+        <form class="loginform">
+            <h3>Welcome back, champ!</h3>
+    
+            <label class="loginlabel" for="username">Username</label>
+            <input class="logininput" type="text" placeholder="Username" id="username">
+    
+            <label class="loginlabel" for="password">Password</label>
+            <input class="logininput" type="password" placeholder="Password" id="password">
+            <a class="pwdreset" for="username" href="./">Forgot your password?</label>
+    
+            <button class="loginbutton">Log In</button>
+        </form>
     </main>
     <script src="./scripts/getData.js"></script>
 </body>
