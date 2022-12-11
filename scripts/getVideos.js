@@ -18,7 +18,7 @@ const getListOfRandomGames=async () => {
                 <label>${clip.username}</label>
             </div>
             <video width="0" controls>
-                <source src="./static/${clip.url}" type="video/mp4">
+                <source src="${url}/static/${clip.url}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </article>
