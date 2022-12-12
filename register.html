@@ -71,14 +71,18 @@
 
     </header>
     <main class="full">
-        <form class="loginform">
+        <form class="loginform" action="http://localhost:3000/auth/register" method="post"
+            enctype="application/x-www-form-urlencoded">
             <h3>Welcome to the fold!</h3>
     
             <label class="loginlabel" for="username">Username</label>
-            <input class="logininput" type="text" placeholder="Username" id="username">
+            <input class="logininput" type="text" placeholder="Username" id="username" name="username">
+            
+            <label class="loginlabel" for="email">email</label>
+            <input class="logininput" type="text" placeholder="Username" id="email" name="email">
     
             <label class="loginlabel" for="password">Password</label>
-            <input class="logininput" type="password" placeholder="Password" id="password">
+            <input class="logininput" type="password" placeholder="Password" id="password" name="password">
     
             <button class="loginbutton">Register</button>
         </form>
