@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/popup-styles.css">
+    <title>GameClips - Upload</title>
+</head>
+
+<body>
+    <main class="full">
+        <form class="loginform uploadForm">
+            <h3>Upload your fancy clip!</h3>
+
+            <label class="loginlabel" for="title">Title</label>
+            <input class="logininput" type="text" placeholder="title" name="title">
+
+            <label class="loginlabel" for="desc">Description</label>
+            <input class="logininput" type="text" placeholder="Description" name="desc">
+
+            <label class="loginlabel" for="clip">Your .mp4-file</label>
+            <input class="fileUplaod" type="file" name="clip">
+
+            <button class="loginbutton" type="submit">Upload</button>
+        </form>
+    </main>
+    <script src="./scripts/checkLoginStatus.js"></script>
+    <script src="./scripts/serialize.js"></script>
+    <script src="./scripts/uploadClip.js"></script>
+
+</body>
+
+</html>
