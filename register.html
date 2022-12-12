@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>GameClips - Home</title>
+    <link rel="stylesheet" href="./styles/popup-styles.css">
+    <title>GameClips - Browse</title>
 </head>
 
 <body>
@@ -15,13 +16,13 @@
         <h1 class="site-logo">GameClips</h1>
         <nav class="menu guest-main">
             <ul>
-                <li><a class="active" href="./">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li><a href="./browse.html">Browse</a></li>
             </ul>
         </nav>
         <nav class="menu logged-in-main">
             <ul>
-                <li><a class="active" href="">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="">Browse</a></li>
                 <li><a href="">Favorites</a></li>
                 <li><a href="#upload-clip">Upload own clip</a></li>
@@ -29,7 +30,7 @@
         </nav>
         <nav class="menu guest-registration">
             <ul>
-                <li><a href="./register.html" class="btn-highlight">Register</a></li>
+                <li><a href="./register.html" class="active">Register</a></li>
                 <li><a href="./login.html">Login</a></li>
             </ul>
         </nav>
@@ -40,18 +41,20 @@
             </ul>
         </nav>
     </header>
-    <aside class="side-panel">
-        <h2 id="hello-message">Welcome, Stranger</h2>
-        <h3>Trending games</h3>
-        <ul class="trending-games">
-            <li><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg" alt="game cover">
-            </li>
-        </ul>
-    </aside>
-    <main>
-        
+    <main class="full">
+        <form class="loginform">
+            <h3>Welcome to the fold!</h3>
+    
+            <label class="loginlabel" for="username">Username</label>
+            <input class="logininput" type="text" placeholder="Username" id="username">
+    
+            <label class="loginlabel" for="password">Password</label>
+            <input class="logininput" type="password" placeholder="Password" id="password">
+    
+            <button class="loginbutton">Register</button>
+        </form>
     </main>
-    <script src="./scripts/auth/trader.js"></script>
+    <script src="./scripts/getData.js"></script>
 </body>
 
 </html>
