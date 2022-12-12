@@ -14,8 +14,6 @@ function getCookie(cname) {
     return "";
 }
 
-const token=getCookie('token')
-
 const url='http://localhost:3000';
 const uploadForm=document.querySelector('.uploadForm')
 
@@ -26,7 +24,7 @@ uploadForm.addEventListener('submit', async (evt) => {
         const fetchOptions={
             method: 'POST',
             headers: {
-                Authorization: 'Bearer '+token
+                Authorization: 'Bearer '+getCookie('token')
             },
             body: data
         };

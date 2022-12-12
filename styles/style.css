@@ -17,7 +17,8 @@ label {
 }
 
 article.clip-post {
-    margin-top: 50px;
+    margin-top: 60px;
+        margin-bottom: 60px;
     width: 60%
 }
 
@@ -81,7 +82,7 @@ aside.side-panel>* {
 body {
     display: flex;
     flex-wrap: wrap;
-    overflow-y: hidden
+    overflow: hidden;
 }
 
 h1.site-logo {
@@ -100,6 +101,7 @@ h4 {
 }
 
 header {
+    position: fixed;
     align-items: center;
     background-color: var(--secondary);
     box-shadow: 0 5px 10px 0 var(--primary-25pc);
@@ -116,6 +118,7 @@ header {
 }
 
 main {
+    padding-top: 0px;
     align-content: flex-start;
     background-color: var(--primary);
     background-image: url(../media/bg.jpg);
@@ -124,7 +127,8 @@ main {
     flex-wrap: wrap;
     height: 100vh;
     justify-content: center;
-    overflow: scroll;
+    overflow-y: scroll;
+        overflow-x: hidden;
     width: 80%
 }
 
@@ -228,8 +232,9 @@ label {
 }
 
 ul.trending-games {
+    overflow: none;
     list-style-type: none;
-    padding: 0
+    padding: 0;
 }
 
 ul.trending-games>li>img,

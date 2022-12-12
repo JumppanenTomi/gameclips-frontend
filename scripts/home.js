@@ -1,22 +1,22 @@
 const url='http://localhost:3000';
 const clips=document.querySelector('main');
 const trending=document.querySelector('.trending-games');
-console.log(trending)
 
-/**async function trendingGames() {
+async function trendingGames() {
     const response=await fetch(url+'/browse');
     return response.json();
 }
 
 trendingGames().then(async function (gamesdata) {
-
-    const li=document.createElement('li')
-    const img=document.createElement('img')
-    img.src='https://cdn.cloudflare.steamstatic.com/steam/apps/'+gamesdata[12042].id+'/header.jpg'
-    img.alt=gamesdata[0].name+' cover'
-    trending.appendChild(li)
-    li.appendChild(img)
-});**/
+    for (let i=0; i<=10; i++) {
+        const li=document.createElement('li')
+        const img=document.createElement('img')
+        img.src='https://cdn.cloudflare.steamstatic.com/steam/apps/'+gamesdata[i].id+'/header.jpg'
+        img.alt=gamesdata[i].name+' cover'
+        trending.appendChild(li)
+        li.appendChild(img)
+    }
+});
 
 async function getQuery() {
     const response=await fetch(url+'/clip/getRandomQuery');
