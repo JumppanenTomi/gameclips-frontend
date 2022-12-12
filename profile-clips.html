@@ -20,14 +20,41 @@
                 <li><a href="./">Home</a></li>
                 <li><a href="./browse.html">Browse</a></li>
             </ul>
+            <input type="checkbox" id="hamburger-input" class="burger-shower" />
+            <label id="hamburger-menu" for="hamburger-input">
+                <nav id="sidebar-menu">
+                  <ul>
+                    <img src="./media/back.png" />
+                      <li><a class="active" href="./">Home</a></li>
+                      <li><a href="./browse.html">Browse</a></li>
+                      <li><a href="./login.html">Login</a></li>
+                      <li><a href="./register.html">Register</a></li>
+                  </ul>
+                
+                </nav>
+              </label>
         </nav>
         <nav id="menu" class="menu logged-in-main">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Browse</a></li>
-                <li><a href="">Favorites</a></li>
+                <li><a class="active" href="./">Home</a></li>
+                <li><a href="./browse.html">Browse</a></li>
+                <li><a href="./profile-favorites.html">Favorites</a></li>
                 <li><a href="#upload-clip">Upload own clip</a></li>
             </ul>
+            <input type="checkbox" id="hamburger-input" class="burger-shower" />
+            <label id="hamburger-menu" for="hamburger-input"">
+                <nav id="sidebar-menu">
+                  <ul>
+                    <img src="./media/back.png" />
+                      <li><a class="active" href="./">Home</a></li>
+                      <li><a href="./browse.html">Browse</a></li>
+                      <li><a href="./profile-favorites.html">Favorites</a></li>
+                      <li><a href="#upload-clip">Upload own clip</a></li>
+                      <li><a class="active" href="profile-clips.html">Account</a></li>
+                      <li><a href="#logout">Log-out</a></li>
+                  </ul>
+                </nav>
+              </label>
         </nav>
         <nav id="menu" class="menu guest-registration">
             <ul>
@@ -37,8 +64,8 @@
         </nav>
         <nav id="menu" class="menu logged-in-account">
             <ul>
-                <li><a class="active" href="">Account</a></li>
-                <li><a href="">Log-out</a></li>
+                <li><a class="active" href="profile-clips.html">Account</a></li>
+                <li><a href="#logout">Log-out</a></li>
             </ul>
         </nav>
     </header>
@@ -59,6 +86,21 @@
         </section>
     </aside>
     <main>
+        <section class="mobile-profile" class="profile">
+            <img class="profile-pic" src="./media/profile.png" alt="Default">
+            <h3 class="profile-name">Username</h3>
+            <nav>
+            <ul class="profile-links">
+                <li><a class="profilelink" href="./profile-clips.html">Clips</a></li>
+                <li><a class="profilelink" href="./profile-favorites.html">Favorites</a></li>
+                <li><a class="profilelink" href="./profile-comments.html">Comments</a></li>
+            </ul>
+        </nav>
+        <a href="./"><img class="social" src="./media/discord.png" alt="Discord"></a>
+        <a href="./"><img class="social" src="./media/steam.png" alt="Steam"></a>
+        <a href="./"><img class="social" src="./media/battle-net.png" alt="Battle.net"></a>
+        </section>
+
         <article class="clip-post">
             <h2>Insane cache clip</h2>
             <p>U dont wanna miss this</p>

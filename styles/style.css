@@ -194,6 +194,66 @@ article.game-thumb>img:hover {
         margin-top: 20px;
 }
 
+#comment-box{
+    width: 50%;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--white);
+    padding: 10px 10px 10px 10px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    background-color: var(--primary);
+}
+
+#post {
+    margin-top: 50px;
+    width: 20%;
+    background-color: var(--accent);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--white);
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Collapse comment section */
+.collapse, .collapse ul, .collapse ol {
+    list-style-type: none;
+    padding-left: 10px;
+}
+  
+  .collapse li {
+    padding: 10px;
+}
+  
+  .toggle {
+    padding: 10px; 
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-size: 20px;
+}
+
+  .toggle::before {
+    content: "Show all comments";
+}
+
+  .toggle.show::before {
+    content: "Show less";
+}
+  
+  .collapse ul, .collapse ol {
+    display: none;
+}
+  .toggle.show + ul, .toggle.show + ol {
+    display: block;
+}
+
 /* Search bar */
 
 .form {
@@ -357,6 +417,10 @@ article.game-thumb>img:hover {
     padding: 20px;
 }
 
+.mobile-profile {
+    display: none;
+}
+
 .profile-pic {
     height: 50%;
 }
@@ -388,6 +452,72 @@ article.game-thumb>img:hover {
     padding: 10px;
 }
 
+  #hamburger-input{
+    display: none;
+  }
+  
+  #hamburger-menu {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      display: none;
+      border: none;
+      padding: 0px;
+      margin: 0px;
+      background: linear-gradient(
+        to bottom, 
+        var(--accent), var(--accent) 20%, 
+        var(--secondary), var(--secondary) 40%, 
+        var(--accent) 40%, var(--accent) 60%, 
+        var(--secondary) 60%, var(--secondary) 80%, 
+        var(--accent) 80%, var(--accent) 100%
+      );
+  }
+  
+  #hamburger-menu #sidebar-menu {
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 200px;
+      height: 100%;
+      background-color: var(--primary);
+      transition: 0.3s;
+      padding: 0px 10px;
+      box-sizing: border-box;
+  }
+  
+  #hamburger-menu ul {
+    padding-left: 0px;
+  }
+  
+  #hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+  }
+  
+  #hamburger-menu a {
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  #hamburger-input:checked + #hamburger-menu #sidebar-menu {
+      visibility: visible;
+      left: 0;
+  }
+  #hamburger-input:checked ~ .overlay{
+     visibility: visible;
+    opacity: 0.4;
+  }
+
+  #hamburger-menu {
+    display: none;
+  }
+
 @media (max-width: 500px) { /* Mobile */
     header {
         align-items: center;
@@ -396,23 +526,41 @@ article.game-thumb>img:hover {
         display: flex;
         flex-wrap: nowrap;
         height: 75px;
-        justify-content: space-between;
         left: 0;
-        padding-left: 30px;
         right: 0;
         width: 100%;
         z-index: 99;
         overflow-x: hidden;
         overflow-y: auto;
+        text-align: center;
     }
+
+    #main-menu {
+        display: none;
+      }
+
+      #hamburger-menu {
+        display: inline;
+      }
+
+
+    #main-menu {
+        display: none;
+      }
+
+      #hamburger-menu {
+        display: inline;
+      }
 
     h1.site-logo {
         color: var(--accent);
         font-family: 'Poppins', sans-serif;
         font-size: 20px;
         font-weight: 700;
+        width: 100%;
+        text-align: center;
     }
-    
+
     main {
         align-content: flex-start;
         background-color: var(--primary);
@@ -423,6 +571,15 @@ article.game-thumb>img:hover {
         height: 100vh;
         justify-content: center;
         width: 100%
+    }
+
+    nav.menu>ul {
+        display: none;
+    }
+
+    article.clip-post {
+        margin-top: 20px;
+        width: 60%
     }
 
     ul.trending-games>li>img,
@@ -462,7 +619,7 @@ article.game-thumb>img:hover {
         font-size: 15px;
         font-weight: 400;
         color: var(--white);
-        padding: 10px 10px 10px 10px;
+        padding: 10px 100px 10px 10px;
         border: none;
         border-radius: 15px;
         outline: none;
@@ -475,4 +632,81 @@ article.game-thumb>img:hover {
         object-fit: cover;
         padding-left: 10px;
       }
-  }
+
+      aside.side-panel {
+        display: none;
+    }
+    
+    aside.side-panel>* {
+        display: none;
+    }
+
+    .mobile-profile {
+        display: block;
+        align-items: center;
+        text-align: center;
+        height: 50%;
+        width: 50%;
+        margin-top: 50px;
+        padding: 20px;
+        margin-bottom: 150px;
+    }
+
+    .profile-pic {
+        height: 50%;
+    }
+    
+    .profile-name {
+        font-size: 40px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        color: var(--white);
+        margin-top: 15px;
+    }
+    
+    .social {
+        height: 10%;
+        padding: 20px;
+    }
+    
+    .profile-links {
+        list-style-type: none;
+        margin-left: -45px;
+    }
+    
+    .profilelink {
+        display: block;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        color: var(--white);
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    #comment-box{
+        width: 70%;
+        height: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--white);
+        padding: 10px 10px 10px 10px;
+        border: none;
+        border-radius: 15px;
+        outline: none;
+        background-color: var(--primary);
+    }
+    
+    #post {
+        margin-top: 50px;
+        width: 20%;
+        background-color: var(--accent);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--white);
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
