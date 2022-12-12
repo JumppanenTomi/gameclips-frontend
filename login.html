@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/popup-styles.css">
     <title>GameClips - Browse</title>
 </head>
 
@@ -20,7 +19,7 @@
                 <li><a href="./browse.html">Browse</a></li>
             </ul>
         </nav>
-        <nav class="menu logged-in-main">
+        <nav class="menu require-login">
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">Browse</a></li>
@@ -34,7 +33,7 @@
                 <li><a href="./login.html" class="active" >Login</a></li>
             </ul>
         </nav>
-        <nav class="menu logged-in-account">
+        <nav class="menu require-login">
             <ul>
                 <li><a href="">Account</a></li>
                 <li><a href="">Log-out</a></li>
@@ -42,20 +41,21 @@
         </nav>
     </header>
     <main class="full">
-        <form class="loginform">
+        <form class="loginform" action="http://localhost:3000/auth/login" method="post">
             <h3>Welcome back, champ!</h3>
     
             <label class="loginlabel" for="username">Username</label>
-            <input class="logininput" type="text" placeholder="Username" id="username">
+            <input class="logininput" type="text" placeholder="Username" id="username" name="username">
     
             <label class="loginlabel" for="password">Password</label>
-            <input class="logininput" type="password" placeholder="Password" id="password">
+            <input class="logininput" type="password" placeholder="Password" id="password" name="password">
             <label class="pwdreset" for="username" href="./">Forgot your password?</label>
     
-            <button class="loginbutton">Log In</button>
+            <button class="loginbutton" type="submit">Log In</button>
         </form>
     </main>
-    <script src="./scripts/getData.js"></script>
+    <script src="./scripts/serialize.js"></script>
+    <script src="./scripts/auth.js"></script>
 </body>
 
 </html>

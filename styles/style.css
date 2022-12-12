@@ -130,8 +130,7 @@ main {
 main.full {
     width: 100%;
 }
-nav.logged-in-main,
-nav.logged-in-account {
+.require-login {
     display: none
 }
 

@@ -13,13 +13,13 @@
 <body>
     <header>
         <h1 class="site-logo">GameClips</h1>
-        <nav class="menu guest-main">
+        <nav class="menu guest-main guest">
             <ul>
                 <li><a class="active" href="./">Home</a></li>
                 <li><a href="./browse.html">Browse</a></li>
             </ul>
         </nav>
-        <nav class="menu logged-in-main">
+        <nav class="menu logged-in-main login">
             <ul>
                 <li><a class="active" href="">Home</a></li>
                 <li><a href="">Browse</a></li>
@@ -27,16 +27,16 @@
                 <li><a href="#upload-clip">Upload own clip</a></li>
             </ul>
         </nav>
-        <nav class="menu guest-registration">
+        <nav class="menu guest-registration guest">
             <ul>
                 <li><a href="./register.html" class="btn-highlight">Register</a></li>
                 <li><a href="./login.html">Login</a></li>
             </ul>
         </nav>
-        <nav class="menu logged-in-account">
+        <nav class="menu logged-in-account login">
             <ul>
                 <li><a href="">Account</a></li>
-                <li><a href="">Log-out</a></li>
+                <li><a href="./logout.html">Log-out</a></li>
             </ul>
         </nav>
     </header>
@@ -51,7 +51,9 @@
     <main>
         
     </main>
-    <script src="./scripts/auth/trader.js"></script>
+    <script src="./scripts/loggedIn.js"></script>
+    <script src="./scripts/browse.js"></script>
+    <script src="./scripts/home.js"></script>
 </body>
 
 </html>
