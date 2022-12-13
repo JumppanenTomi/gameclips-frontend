@@ -13,10 +13,3 @@ function getCookie(cname) {
     }
     return "";
 }
-
-const token=getCookie('token')
-
-if (token.length<1) {
-    console.log('dsa')
-    window.open("login.html", "_self")
-}
