@@ -1,5 +1,4 @@
 'use strict';
-const url='http://localhost:3000';
 
 const loginform=document.querySelector('#loginform');
 
@@ -21,6 +20,6 @@ loginform.addEventListener('submit', async (evt) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     };
-    const response=await fetch(url+'/auth/login', fetchOptions);
+    const response=await fetch(serverUrl()+'/auth/login', fetchOptions);
     loginHandler(await response.json());
 })

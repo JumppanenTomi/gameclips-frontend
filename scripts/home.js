@@ -1,9 +1,9 @@
-const url='http://localhost:3000';
 const clips=document.querySelector('main');
 const trending=document.querySelector('.trending-games');
+const myUsername=JSON.parse(getCookie('user')).username;
 
 async function trendingGames() {
-    const response=await fetch(url+'/browse/getAllWithClips');
+    const response=await fetch(serverUrl()+'/browse/getAllWithClips');
     return response.json();
 }
 
@@ -19,7 +19,7 @@ trendingGames().then(async function (gamesdata) {
 });
 
 async function getQuery() {
-    const response=await fetch(url+'/clip/getRandomQuery');
+    const response=await fetch(serverUrl()+'/clip/getRandomQuery');
     return response.json();
 }
 
@@ -27,7 +27,6 @@ getQuery().then(async function (clipsData) {
     if (clipsData.length==0) {
         const emptytext=document.createElement('h2');
         emptytext.textContent="There are no clips. Start uplaoding them."
-        clips.appendChild(emptytext)
     } else {
         clipsData.forEach(clip => {
             const article=document.createElement('article');
@@ -48,7 +47,7 @@ getQuery().then(async function (clipsData) {
             const clipEl=document.createElement('video');
             clipEl.setAttribute('controls', '');
             const clipSrc=document.createElement('source');
-            clipSrc.src=url+'/static/'+clip.url
+            clipSrc.src=serverUrl()+'/static/'+clip.url
             clipSrc.setAttribute('type', 'video/mp4')
 
             const textBox=document.createElement('input')
@@ -77,6 +76,13 @@ getQuery().then(async function (clipsData) {
             article.appendChild(poster)
             poster.appendChild(posterImg)
             poster.appendChild(posterName)
+            if (clip.username==myUsername) {
+                const deleteBtn=document.createElement('button');
+                deleteBtn.className="delete"
+                deleteBtn.textContent="Delete"
+                deleteBtn.setAttribute('onClick', 'deleteClip('+clip.id+')')
+                article.appendChild(deleteBtn)
+            }
             article.appendChild(clipEl)
             clipEl.appendChild(clipSrc)
             article.appendChild(textBox)

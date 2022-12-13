@@ -225,6 +225,27 @@ main.full {
     }
 }
 
+
+button.delete{
+    background-color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button.delete:hover{
+    transform: scale(1.05);
+    transition: .3s;
+    background-color: var(--accent);
+}
+
 p,
 label {
     color: var(--white)

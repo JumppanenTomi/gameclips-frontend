@@ -14,7 +14,6 @@ function getCookie(cname) {
     return "";
 }
 
-const url='http://localhost:3000';
 const uploadForm=document.querySelector('.uploadForm')
 const select=document.querySelector('.gameDropdown');
 
@@ -29,7 +28,7 @@ uploadForm.addEventListener('submit', async (evt) => {
             },
             body: data
         };
-        const response=await fetch(url+'/clip', fetchOptions);
+        const response=await fetch(serverUrl()+'/clip', fetchOptions);
         alert(await response.json())
         window.open("index.html", '_self')
     } catch (err) {
@@ -41,7 +40,7 @@ uploadForm.addEventListener('submit', async (evt) => {
 
 
 async function allGames() {
-    const response=await fetch(url+'/browse');
+    const response=await fetch(serverUrl()+'/browse');
     return response.json();
 }
 

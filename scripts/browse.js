@@ -1,8 +1,7 @@
-const url='http://localhost:3000';
 const browse=document.querySelector('.browse');
 
 async function trendingGames() {
-    const response=await fetch(url+'/browse/getAllWithClips');
+    const response=await fetch(serverUrl()+'/browse/getAllWithClips');
     return response.json();
 }
 

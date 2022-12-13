@@ -1,5 +1,4 @@
 'use strict';
-const url='http://localhost:3000';
 
 const registerform=document.querySelector('#registerform');
 
@@ -19,6 +18,6 @@ registerform.addEventListener('submit', async (evt) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     };
-    const response=await fetch(url+'/auth/register', fetchOptions);
+    const response=await fetch(serverUrl()+'/auth/register', fetchOptions);
     registerHandler(await response.json());
 })

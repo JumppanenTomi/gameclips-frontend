@@ -1,4 +1,3 @@
-const url='http://localhost:3000';
 const clips=document.querySelector('main');
 const user=JSON.parse(getCookie('user'))
 
@@ -8,7 +7,7 @@ async function getQuery() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 'id': user.id })
     };
-    const response=await fetch(url+'/profile/getUserProfileById', fetchOptions);
+    const response=await fetch(serverUrl()+'/profile/getUserProfileById', fetchOptions);
     console.log(response.json())
     return response.json();
 }
