@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>GameClips - Account</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="site-logo">GameClips</h1>
+        <div id="guest" class="container">
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="./" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="browse.html" class="nav-link">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="register.html" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+
+        <div id="logged" class="container">
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="./" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="browse.html" class="nav-link">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile-favorites.html" class="nav-link">Favorites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="upload-clip.html" class="nav-link">Upload own clip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile-clips.html" class="nav-link">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logout.html" class="nav-link">Log Out</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <aside class="side-panel">
+        <section class="profile">
+            <img class="profile-pic" src="./media/profile.png" alt="Default">
+            <h3 class="profile-name">Username</h3>
+            <nav>
+                <ul class="profile-links">
+                    <li><a class="profilelink" href="./profile-clips.html">Clips</a></li>
+                    <li><a class="profilelink" href="./profile-favorites.html">Favorites</a></li>
+                    <li><a class="profilelink" href="./profile-comments.html">Comments</a></li>
+                </ul>
+            </nav>
+            <a href="./"><img class="social" src="./media/discord.png" alt="Discord"></a>
+            <a href="./"><img class="social" src="./media/steam.png" alt="Steam"></a>
+            <a href="./"><img class="social" src="./media/battle-net.png" alt="Battle.net"></a>
+        </section>
+    </aside>
+    <main>
+        <section class="mobile-profile">
+            <img class="profile-pic" src="./media/profile.png" alt="Default">
+            <h3 class="profile-name">Username</h3>
+            <nav>
+                <ul class="profile-links">
+                    <li><a class="profilelink" href="./profile-clips.html">Clips</a></li>
+                    <li><a class="profilelink" href="./profile-favorites.html">Favorites</a></li>
+                    <li><a class="profilelink" href="./profile-comments.html">Comments</a></li>
+                </ul>
+            </nav>
+            <a href="./"><img class="social" src="./media/discord.png" alt="Discord"></a>
+            <a href="./"><img class="social" src="./media/steam.png" alt="Steam"></a>
+            <a href="./"><img class="social" src="./media/battle-net.png" alt="Battle.net"></a>
+        </section>
+        <article class="clip-post">
+            <p>servun_pelätyin commented</p>
+            <h2>"gg ez"</h2>
+            <p>on your clip:</p>
+
+            <video width="0" controls>
+                <source src="./media/1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </article>
+    </main>
+    <script src="./scripts/utils/url.js"></script>
+    <script src="./scripts/utils/checkLoginStatus.js"></script>
+    <script src="./scripts/utils/header.js"></script>
+    <script src="./scripts/utils/serialize.js"></script>
+</body>
+
+</html>

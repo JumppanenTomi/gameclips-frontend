@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>GameClips - Upload</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="site-logo">GameClips</h1>
+        <div id="guest" class="container">
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="./" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="browse.html" class="nav-link">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="register.html" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+
+        <div id="logged" class="container">
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="./" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="browse.html" class="nav-link">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile-favorites.html" class="nav-link">Favorites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="upload-clip.html" class="nav-link">Upload own clip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile-clips.html" class="nav-link">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logout.html" class="nav-link">Log Out</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="full">
+        <form class="loginform uploadForm">
+            <h3>Upload your fancy clip!</h3>
+
+            <label class="loginlabel" for="title">Title</label>
+            <input class="logininput" type="text" placeholder="title" name="title">
+
+            <label class="loginlabel" for="desc">Description</label>
+            <input class="logininput" type="text" placeholder="Description" name="desc">
+
+            <label class="loginlabel" for="clip">Your .mp4-file</label>
+            <input class="fileUplaod" type="file" name="clip">
+
+            <label class="loginlabel" for="gameId">Game</label>
+            <select class="gameDropdown" name="gameId"
+                style="background-color: var(--primary); width: 100%; padding: 10px; border-radius: 15px; margin-top: 8px;">
+                <option value="NULL">Not selected</option>
+            </select>
+
+            <button class="loginbutton" type="submit">Upload</button>
+        </form>
+    </main>
+    <script src="./scripts/utils/url.js"></script>
+    <script src="./scripts/utils/checkLoginStatus.js"></script>
+    <script src="./scripts/utils/header.js"></script>
+    <script src="./scripts/utils/serialize.js"></script>
+    <script src="./scripts/uploadClip.js"></script>
+</body>
+
+</html>
