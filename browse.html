@@ -2,99 +2,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/popup-styles.css">
-    <script src="index.js"></script>
-    <title>GameClips - Browse</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="./styles/style.css">
+   <title>GameClips - Browse</title>
 </head>
 
 <body>
    <header>
       <h1 class="site-logo">GameClips</h1>
-      <div id="guest" class="container"> 
-          <nav class="navbar">
-             <ul class="nav-menu">
-                <li class="nav-item">
-                   <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                   <a href="browse.html" class="nav-link">Browse</a>
-                </li>
-                <li class="nav-item">
+      <div id="guest" class="container">
+         <nav class="navbar">
+            <ul class="nav-menu">
+               <li class="nav-item">
+                  <a href="./" class="nav-link">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a href="browse.html" class="nav-link">Browse</a>
+               </li>
+               <li class="nav-item">
                   <a href="register.html" class="nav-link">Register</a>
-              </li>
-                <li class="nav-item">
+               </li>
+               <li class="nav-item">
                   <a href="login.html" class="nav-link">Login</a>
-              </li>
-             </ul>
-             <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-             </div>
-          </nav>
-       </div>
+               </li>
+            </ul>
+            <div class="hamburger">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </div>
+         </nav>
+      </div>
 
-       <div id="logged" class="container"> 
-          <nav class="navbar">
-             <ul class="nav-menu">
-                <li class="nav-item">
-                   <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                   <a href="browse.html" class="nav-link">Browse</a>
-                </li>
-                <li class="nav-item">
+      <div id="logged" class="container">
+         <nav class="navbar">
+            <ul class="nav-menu">
+               <li class="nav-item">
+                  <a href="./" class="nav-link">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a href="browse.html" class="nav-link">Browse</a>
+               </li>
+               <li class="nav-item">
                   <a href="profile-favorites.html" class="nav-link">Favorites</a>
-              </li>
-              <li class="nav-item">
-                  <a href="#upload" class="nav-link">Upload own clip</a>
-              </li>
-                <li class="nav-item">
+               </li>
+               <li class="nav-item">
+                  <a href="upload-clip.html" class="nav-link">Upload own clip</a>
+               </li>
+               <li class="nav-item">
                   <a href="profile-clips.html" class="nav-link">Account</a>
-              </li>
-              <li class="nav-item">
-                  <a href="#LOGOUT" class="nav-link">Log Out</a>
-              </li>
-             </ul>
-             <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-             </div>
-          </nav>
-       </div>
-
-  </header>
-    <main class="full">
-        <form action="/" method="GET" class="form">
-            <input type="search" placeholder="Looking for something?" class="search-field">
-            <button type="submit" class="search-button">
-              <img src="media/search.png">
-            </button>
-          </form>
-        <section class="browse">
-        <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                alt="game cover"></article>
-        <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                alt="game cover"></article>
-        <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                alt="game cover"></article>
-                <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                    alt="game cover"></article>
-            <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                    alt="game cover"></article>
-            <article class="game-thumb"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
-                    alt="game cover"></article>
-            </section>
-    </main>
-    <script src="./scripts/getData.js"></script>
-    <script src="./scripts/index.js"></script>
+               </li>
+               <li class="nav-item">
+                  <a href="logout.html" class="nav-link">Log Out</a>
+               </li>
+            </ul>
+            <div class="hamburger">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </div>
+         </nav>
+      </div>
+   </header>
+   <main class="full">
+      <section class="browse">
+      </section>
+   </main>
+   <script src="./scripts/utils/url.js"></script>
+   <script src="./scripts/utils/header.js"></script>
+   <script src="./scripts/utils/serialize.js"></script>
+   <script src="./scripts/data/browse.js"></script>
+   <script src="./scripts/browse.js"></script>
+   <script src="./scripts/loggedIn.js"></script>
 </body>
 
 </html>

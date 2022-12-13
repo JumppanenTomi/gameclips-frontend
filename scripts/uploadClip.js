@@ -14,10 +14,8 @@ function getCookie(cname) {
     return "";
 }
 
-const token=getCookie('token')
-
-const url='http://localhost:3000';
 const uploadForm=document.querySelector('.uploadForm')
+const select=document.querySelector('.gameDropdown');
 
 uploadForm.addEventListener('submit', async (evt) => {
     try {
@@ -26,15 +24,31 @@ uploadForm.addEventListener('submit', async (evt) => {
         const fetchOptions={
             method: 'POST',
             headers: {
-                Authorization: 'Bearer '+token
+                Authorization: 'Bearer '+getCookie('token')
             },
             body: data
         };
-        const response=await fetch(url+'/clip', fetchOptions);
+        const response=await fetch(serverUrl()+'/clip', fetchOptions);
         alert(await response.json())
         window.open("index.html", '_self')
     } catch (err) {
         alert(err)
     }
 
+});
+
+
+
+async function allGames() {
+    const response=await fetch(serverUrl()+'/browse');
+    return response.json();
+}
+
+allGames().then(async function (gamesdata) {
+    gamesdata.forEach(game => {
+        const option=document.createElement('option')
+        option.setAttribute('value', game.id)
+        option.textContent=game.name
+        select.appendChild(option)
+    });
 });

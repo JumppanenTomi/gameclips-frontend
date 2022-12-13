@@ -17,7 +17,8 @@ label {
 }
 
 article.clip-post {
-    margin-top: 50px;
+    margin-top: 60px;
+        margin-bottom: 60px;
     width: 60%
 }
 
@@ -81,7 +82,7 @@ aside.side-panel>* {
 body {
     display: flex;
     flex-wrap: wrap;
-    overflow-y: hidden
+    overflow: hidden;
 }
 
 h1.site-logo {
@@ -90,6 +91,10 @@ h1.site-logo {
     font-size: 24px;
     font-weight: 700;
     padding-right: 240px;
+}
+
+div#clips>article.clip-post{
+    width: 100%;
 }
 
 h2,
@@ -106,7 +111,7 @@ header {
     box-shadow: 0 5px 10px 0 var(--primary-25pc);
     display: flex;
     flex-wrap: nowrap;
-    height: 75px;
+    height: 10vh;
     justify-content: space-between;
     left: 0;
     padding-left: 50px;
@@ -117,15 +122,17 @@ header {
 }
 
 main {
+    padding-top: 0px;
     align-content: flex-start;
     background-color: var(--primary);
     background-image: url(../media/bg.jpg);
     background-size: contain;
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
-    overflow: scroll;
+    overflow-y: scroll;
+        overflow-x: hidden;
     width: 80%
 }
 
@@ -186,14 +193,36 @@ main.full {
     background-color: var(--accent);
 }
 
+
+button.delete{
+    background-color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--white);
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button.delete:hover{
+    transform: scale(1.05);
+    transition: .3s;
+    background-color: var(--accent);
+}
+
 p,
 label {
     color: var(--white)
 }
 
 ul.trending-games {
+    overflow: none;
     list-style-type: none;
-    padding: 0
+    padding: 0;
 }
 
 ul.trending-games>li>img,
