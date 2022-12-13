@@ -16,6 +16,7 @@ function getCookie(cname) {
 
 const url='http://localhost:3000';
 const uploadForm=document.querySelector('.uploadForm')
+const select=document.querySelector('.gameDropdown');
 
 uploadForm.addEventListener('submit', async (evt) => {
     try {
@@ -35,4 +36,20 @@ uploadForm.addEventListener('submit', async (evt) => {
         alert(err)
     }
 
+});
+
+
+
+async function allGames() {
+    const response=await fetch(url+'/browse');
+    return response.json();
+}
+
+allGames().then(async function (gamesdata) {
+    gamesdata.forEach(game => {
+        const option=document.createElement('option')
+        option.setAttribute('value', game.id)
+        option.textContent=game.name
+        select.appendChild(option)
+    });
 });

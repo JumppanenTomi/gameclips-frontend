@@ -17,9 +17,9 @@
         <h1 class="site-logo">GameClips</h1>
         <div id="guest" class="container">
             <nav class="navbar">
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="browse.html" class="nav-link">Browse</a>
@@ -30,20 +30,20 @@
                     <li class="nav-item">
                         <a href="login.html" class="nav-link">Login</a>
                     </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
             </nav>
         </div>
-
+        
         <div id="logged" class="container">
             <nav class="navbar">
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="./" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="browse.html" class="nav-link">Browse</a>
@@ -52,26 +52,25 @@
                         <a href="profile-favorites.html" class="nav-link">Favorites</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#upload" class="nav-link">Upload own clip</a>
+                    <a href="upload-clip.html" class="nav-link">Upload own clip</a>
                     </li>
                     <li class="nav-item">
                         <a href="profile-clips.html" class="nav-link">Account</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#LOGOUT" class="nav-link">Log Out</a>
-                    </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+                        <a href="logout.html" class="nav-link">Log Out</a>
+                        </li>
+                        </ul>
+                        <div class="hamburger">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
             </nav>
         </div>
-
     </header>
     <main class="full">
-        <form class="loginform" action="http://localhost:3000/auth/login" method="post">
+        <form id="loginform" class="loginform" action="http://localhost:3000/auth/login" method="post">
             <h3>Welcome back, champ!</h3>
 
             <label class="loginlabel" for="username">Username</label>
@@ -85,9 +84,10 @@
         </form>
     </main>
     <script src="./scripts/index.js"></script>
-    <script src="./scripts/getData.js"></script>
     <script src="./scripts/serialize.js"></script>
     <script src="./scripts/auth.js"></script>
+    <script src="./scripts/loggedIn.js"></script>
+
 </body>
 
 </html>

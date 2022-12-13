@@ -1,24 +1,28 @@
 'use strict';
 const url='http://localhost:3000';
 
-const loginform=document.querySelector('.loginform');
+const loginform=document.querySelector('#loginform');
+const registerform=document.querySelector('#registerform');
 
-const register=async (username, password, email) => {
-    try {
-        const response=await fetch(url+'/auth/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-url-encoded', 'Accept': 'application/json' },
-            body: new URLSearchParams({
-                'username': username,
-                'email': email,
-                'password': password
-            })
-        });
-        return await response.json();
-    } catch (e) {
-        return e;
+function registerHandler(response) {
+    if (response==true) {
+        window.open("login.html", "_self")
+    } else {
+        alert(JSON.stringify(response))
     }
-};
+}
+
+registerform.addEventListener('submit', async (evt) => {
+    evt.preventDefault();
+    const data=serializeJson(registerform)
+    const fetchOptions={
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    };
+    const response=await fetch(url+'/auth/register', fetchOptions);
+    registerHandler(await response.json());
+})
 
 function loginHandler(user) {
     if (user.token!=undefined) {

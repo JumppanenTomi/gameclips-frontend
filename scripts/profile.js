@@ -1,35 +1,28 @@
 const url='http://localhost:3000';
 const clips=document.querySelector('main');
-const trending=document.querySelector('.trending-games');
-
-async function trendingGames() {
-    const response=await fetch(url+'/browse/getAllWithClips');
-    return response.json();
-}
-
-trendingGames().then(async function (gamesdata) {
-    for (let i=0; i<=10; i++) {
-        const li=document.createElement('li')
-        const img=document.createElement('img')
-        img.src='https://cdn.cloudflare.steamstatic.com/steam/apps/'+gamesdata[i].id+'/header.jpg'
-        img.alt=gamesdata[i].name+' cover'
-        trending.appendChild(li)
-        li.appendChild(img)
-    }
-});
+const user=JSON.parse(getCookie('user'))
 
 async function getQuery() {
-    const response=await fetch(url+'/clip/getRandomQuery');
+    const fetchOptions={
+        method: 'get',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 'id': user.id })
+    };
+    const response=await fetch(url+'/profile/getUserProfileById', fetchOptions);
+    console.log(response.json())
     return response.json();
 }
 
-getQuery().then(async function (clipsData) {
-    if (clipsData.length==0) {
+getQuery().then(async function (profileData) {
+    const username=profileData.username;
+    const usernameText=document.querySelector('.profile-name')
+    usernameText.textContent=username
+    if (profileData.length==0) {
         const emptytext=document.createElement('h2');
         emptytext.textContent="There are no clips. Start uplaoding them."
         clips.appendChild(emptytext)
     } else {
-        clipsData.forEach(clip => {
+        profileData.forEach(clip => {
             const article=document.createElement('article');
             article.className="clip-post"
 
@@ -88,4 +81,3 @@ getQuery().then(async function (clipsData) {
         });
     }
 });
-

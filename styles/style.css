@@ -101,13 +101,12 @@ h4 {
 }
 
 header {
-    position: fixed;
     align-items: center;
     background-color: var(--secondary);
     box-shadow: 0 5px 10px 0 var(--primary-25pc);
     display: flex;
     flex-wrap: nowrap;
-    height: 75px;
+    height: 10vh;
     justify-content: space-between;
     left: 0;
     padding-left: 50px;
@@ -125,7 +124,7 @@ main {
     background-size: contain;
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 90vh;
     justify-content: center;
     overflow-y: scroll;
         overflow-x: hidden;
