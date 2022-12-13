@@ -33,7 +33,7 @@ getQuery().then(async function (clipsData) {
             const poster=document.createElement('div');
             poster.className="posted-by"
             const posterImg=document.createElement('img');
-            posterImg.src="https://wallpapers.com/images/hd/cool-neon-blue-profile-picture-u9y9ydo971k9mdcf.jpg"
+            posterImg.src="./media/profile.png"
             const posterName=document.createElement('label');
             posterName.textContent=clip.username
 

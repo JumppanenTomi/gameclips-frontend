@@ -92,6 +92,10 @@ h1.site-logo {
     font-weight: 700
 }
 
+div#clips>article.clip-post{
+    width: 100%;
+}
+
 h2,
 h3,
 h4 {
