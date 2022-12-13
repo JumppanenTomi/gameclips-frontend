@@ -1,10 +1,5 @@
 const browse=document.querySelector('.browse');
 
-async function trendingGames() {
-    const response=await fetch(serverUrl()+'/browse/getAllWithClips');
-    return response.json();
-}
-
 trendingGames().then(async function (gamesdata) {
     gamesdata.forEach(game => {
         const article=document.createElement('article')

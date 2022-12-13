@@ -5,11 +5,6 @@ if (getCookie('user')!="") {
     myUsername=JSON.parse(getCookie('user')).username;
 }
 
-async function trendingGames() {
-    const response=await fetch(serverUrl()+'/browse/getAllWithClips');
-    return response.json();
-}
-
 trendingGames().then(async function (gamesdata) {
     for (let i=0; i<=10; i++) {
         const li=document.createElement('li')
@@ -20,11 +15,6 @@ trendingGames().then(async function (gamesdata) {
         li.appendChild(img)
     }
 });
-
-async function getQuery() {
-    const response=await fetch(serverUrl()+'/clip/getRandomQuery');
-    return response.json();
-}
 
 getQuery().then(async function (clipsData) {
     if (clipsData.length==0) {
