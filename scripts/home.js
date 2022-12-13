@@ -1,6 +1,9 @@
 const clips=document.querySelector('main');
 const trending=document.querySelector('.trending-games');
-const myUsername=JSON.parse(getCookie('user')).username;
+let myUsername;
+if (getCookie('user')!="") {
+    myUsername=JSON.parse(getCookie('user')).username;
+}
 
 async function trendingGames() {
     const response=await fetch(serverUrl()+'/browse/getAllWithClips');
@@ -76,12 +79,14 @@ getQuery().then(async function (clipsData) {
             article.appendChild(poster)
             poster.appendChild(posterImg)
             poster.appendChild(posterName)
-            if (clip.username==myUsername) {
-                const deleteBtn=document.createElement('button');
-                deleteBtn.className="delete"
-                deleteBtn.textContent="Delete"
-                deleteBtn.setAttribute('onClick', 'deleteClip('+clip.id+')')
-                article.appendChild(deleteBtn)
+            if (getCookie('user')!="") {
+                if (clip.username==myUsername) {
+                    const deleteBtn=document.createElement('button');
+                    deleteBtn.className="delete"
+                    deleteBtn.textContent="Delete"
+                    deleteBtn.setAttribute('onClick', 'deleteClip('+clip.id+')')
+                    article.appendChild(deleteBtn)
+                }
             }
             article.appendChild(clipEl)
             clipEl.appendChild(clipSrc)
