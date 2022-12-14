@@ -8,11 +8,17 @@ if (getCookie('user')!="") {
 trendingGames().then(async function (gamesdata) {
     for (let i=0; i<=10; i++) {
         const li=document.createElement('li')
+
+        const a=document.createElement('a')
+        a.setAttribute('href', './browse-game.html?gameId='+gamesdata[i].id)
+
         const img=document.createElement('img')
-  /*      img.src='https://cdn.cloudflare.steamstatic.com/steam/apps/'+gamesdata[i].id+'/header.jpg'
-        img.alt=gamesdata[i].name+' cover'  */
+        img.src='https://cdn.cloudflare.steamstatic.com/steam/apps/'+gamesdata[i].id+'/header.jpg'
+        img.alt=gamesdata[i].name+' cover'
+        
         trending.appendChild(li)
-        li.appendChild(img)
+        li.appendChild(a)
+        a.appendChild(img)
     }
 });
 

@@ -225,8 +225,8 @@ ul.trending-games {
     padding: 0;
 }
 
-ul.trending-games>li>img,
-article.game-thumb>img {
+ul.trending-games>li>a>img,
+article.game-thumb>a>img {
     border-radius: 15px;
     cursor: pointer;
     max-width: 100%;
@@ -234,13 +234,13 @@ article.game-thumb>img {
     width: 100%;
 }
 
-ul.trending-games>li>img:hover,
-article.game-thumb>img:hover {
+ul.trending-games>li>a>img:hover,
+article.game-thumb>a>img:hover {
     transform: scale(1.05);
     transition: .3s;
 }
 
-article.game-thumb>img {
+article.game-thumb>a>img {
     max-width: 350px;
     margin-left: 25px;
     margin-top: 20px;
