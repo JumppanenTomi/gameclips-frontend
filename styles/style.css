@@ -220,7 +220,7 @@ label {
 }
 
 ul.trending-games {
-    overflow: none;
+    overflow: hidden;
     list-style-type: none;
     padding: 0;
 }
