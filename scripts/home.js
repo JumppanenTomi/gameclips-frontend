@@ -25,9 +25,11 @@ trendingGames().then(async function (gamesdata) {
 getQuery().then(async function (clipsData) {
     if (clipsData.length==0) {
         const emptytext=document.createElement('h2');
-        emptytext.textContent="There are no clips. Start uplaoding them."
+        emptytext.textContent="There are no clips. Start uploading them."
     } else {
         clipsData.forEach(clip => {
+            var selectIndex = clipsData.indexOf(clip);
+
             const article=document.createElement('article');
             article.className="clip-post"
 
@@ -51,12 +53,50 @@ getQuery().then(async function (clipsData) {
 
             const textBox=document.createElement('input')
             textBox.setAttribute('type', 'text')
-            textBox.setAttribute('id', 'comment-box')
+            textBox.setAttribute('id', 'comment-box'+selectIndex)
+            textBox.setAttribute('class', 'comment-box')
             textBox.setAttribute('placeholder', 'Write a comment')
 
             const btn=document.createElement('button')
             btn.setAttribute('id', 'post')
             btn.textContent='Send'
+
+            btn.addEventListener("click", function(){
+          
+                var commentBoxValue= document.getElementById('comment-box'+selectIndex).value;
+             
+                var li = document.createElement("li");
+            
+                var text = document.createTextNode(commentBoxValue);
+            
+                li.setAttribute("style", "width: 50%; height: 50px; border-radius: 15px; background-color: var(--accent); font-family: 'Poppins', sans-serif; font-weight: 400; color: var(--white); list-style-type: none; padding: 20px; margin: 10px;");
+            
+                li.setAttribute("class", "listItem");
+            
+                li.appendChild(text);
+                
+                unordered.appendChild(li);
+             
+            });
+
+   /*         btn.addEventListener('click', async (evt) => {
+                try {
+                    evt.preventDefault();
+                    const data=new FormData(uploadForm)
+                    const fetchOptions={
+                        method: 'POST',
+                        headers: {
+                            Authorization: 'Bearer '+getCookie('token')
+                        },
+                        body: data
+                    };
+                    const response=await fetch(serverUrl()+'/clip', fetchOptions);
+                    alert(await response.json())
+                } catch (err) {
+                    alert(err)
+                }
+            
+            }); */
 
             const collapse=document.createElement('ul')
             collapse.className='collapse'
@@ -92,7 +132,28 @@ getQuery().then(async function (clipsData) {
             collapse.appendChild(li)
             li.appendChild(toggle)
             li.appendChild(unordered)
-        });
+            
+                  for (let i of document.querySelectorAll(".collapse ul")) {
+              
+                    let toggle = document.createElement("div");
+              
+                    toggle.innerHTML = i.previousSibling.textContent;
+              
+                    toggle.className = "toggle";
+              
+                    toggle.onclick = () => { toggle.classList.toggle("show")
+              
+                  };
+            
+                 
+                    i.parentElement.removeChild(i.previousSibling);
+              
+                    i.parentElement.insertBefore(toggle, i);
+              
+                  }
+              
+                });
     }
 });
+
 
