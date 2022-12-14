@@ -1,6 +1,7 @@
 const clips=document.querySelector('#clips');
-const id=JSON.parse(getCookie('user')).id
+const id=JSON.parse(getCookie('user')).id//getting current users id from cookies
 
+//then fetching data using id and placing it into html
 getUserProfileById().then(async function (profileData) {
     const usernameText=document.querySelector('.profile-name')
     usernameText.textContent=profileData.username

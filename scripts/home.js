@@ -1,9 +1,5 @@
 const clips=document.querySelector('main');
 const trending=document.querySelector('.trending-games');
-let myUsername;
-if (getCookie('user')!="") {
-    myUsername=JSON.parse(getCookie('user')).username;
-}
 
 trendingGames().then(async function (gamesdata) {
     for (let i=0; i<=10; i++) {
@@ -13,7 +9,7 @@ trendingGames().then(async function (gamesdata) {
         a.setAttribute('href', './browse-game.html?gameId='+gamesdata[i].id)
 
         const img=document.createElement('img')
-        img.src='https://cdn.cloudflare.steamstatic.com/steam/apps/'+gamesdata[i].id+'/header.jpg'
+        img.src='https://cdn.cloudflare.steamstatic.com/steam/apps/'+gamesdata[i].id+'/header.jpg'//using steam api to get game pic using game id
         img.alt=gamesdata[i].name+' cover'
         
         trending.appendChild(li)
@@ -23,6 +19,7 @@ trendingGames().then(async function (gamesdata) {
 });
 
 getQuery().then(async function (clipsData) {
+    //if query was empty we inform
     if (clipsData.length==0) {
         const emptytext=document.createElement('h2');
         emptytext.textContent="There are no clips. Start uploading them."
@@ -63,8 +60,10 @@ getQuery().then(async function (clipsData) {
             article.appendChild(poster)
             poster.appendChild(posterImg)
             poster.appendChild(posterName)
+            //if user is logged..
             if (getCookie('user')!="") {
-                if (clip.username==myUsername) {
+                //and video is from this user add "delete button"
+                if (clip.username==JSON.parse(getCookie('user')).username) {
                     const deleteBtn=document.createElement('button');
                     deleteBtn.className="delete"
                     deleteBtn.textContent="Delete"

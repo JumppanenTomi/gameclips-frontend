@@ -1,3 +1,5 @@
+//we get this script from w3schools
+//fuction where you send cookie and it returns its value
 function getCookie(cname) {
     let name=cname+"=";
     let decodedCookie=decodeURIComponent(document.cookie);

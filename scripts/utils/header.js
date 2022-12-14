@@ -5,7 +5,7 @@ const hamLog=document.querySelector("#ham-log");
 const gueNav=document.querySelector("#nav-gue");
 const logNav=document.querySelector("#nav-log");
 
-
+//this is guest mobilemenu toggle fuction
 hamGue.addEventListener("click", () => {
 
   hamGue.classList.toggle("active");
@@ -23,7 +23,7 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 }))
 
 
-
+//this is logged-in mobilemenu toggle fuction
 hamLog.addEventListener("click", () => {
 
   hamLog.classList.toggle("active");
@@ -41,6 +41,7 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 }))
 
 
+//if user is logged-in we change this header to logged-in header
 if (document.cookie.indexOf('token=')!=-1) {
   document.querySelectorAll('#guest').forEach(function (el) {
     el.style.display='none';

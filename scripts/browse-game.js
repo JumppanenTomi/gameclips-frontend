@@ -1,11 +1,9 @@
 const clips=document.querySelector('main');
-let myUsername;
-if (getCookie('user')!="") {
-    myUsername=JSON.parse(getCookie('user')).username;
-}
-const urlParams=new URLSearchParams(window.location.search);
+const urlParams=new URLSearchParams(window.location.search);//getting url parameters
 
+//fetching data from api by game id and them creting dom out of given data
 getByGameId(urlParams.get('gameId')).then(async function (clipsData) {
+    //if query was empty we inform
     if (clipsData.length==0) {
         const emptytext=document.createElement('h2');
         emptytext.textContent="There are no clips. Start uplaoding them."
@@ -38,8 +36,10 @@ getByGameId(urlParams.get('gameId')).then(async function (clipsData) {
             article.appendChild(poster)
             poster.appendChild(posterImg)
             poster.appendChild(posterName)
+            //if user is logged..
             if (getCookie('user')!="") {
-                if (clip.username==myUsername) {
+                //and video is from this user add "delete button"
+                if (clip.username==JSON.parse(getCookie('user')).username) {
                     const deleteBtn=document.createElement('button');
                     deleteBtn.className="delete"
                     deleteBtn.textContent="Delete"
