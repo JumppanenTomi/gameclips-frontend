@@ -22,26 +22,6 @@ getUserProfileById().then(async function (profileData) {
         clipSrc.src=serverUrl()+'/static/'+clip.url
         clipSrc.setAttribute('type', 'video/mp4')
 
-        const textBox=document.createElement('input')
-        textBox.setAttribute('type', 'text')
-        textBox.setAttribute('id', 'comment-box')
-        textBox.setAttribute('placeholder', 'Write a comment')
-
-        const btn=document.createElement('button')
-        btn.setAttribute('id', 'post')
-        btn.textContent='Send'
-
-        const collapse=document.createElement('ul')
-        collapse.className='collapse'
-
-        const li=document.createElement('li')
-
-        const toggle=document.createElement('div')
-        toggle.className='toggle'
-
-        const unordered=document.createElement('ul')
-        unordered.className='unordered'
-
         clips.appendChild(article)
         article.appendChild(title)
         article.appendChild(desc)
@@ -52,11 +32,5 @@ getUserProfileById().then(async function (profileData) {
         article.appendChild(deleteBtn)
         article.appendChild(clipEl)
         clipEl.appendChild(clipSrc)
-        article.appendChild(textBox)
-        article.appendChild(btn)
-        article.appendChild(collapse)
-        collapse.appendChild(li)
-        li.appendChild(toggle)
-        li.appendChild(unordered)
     }
 });
