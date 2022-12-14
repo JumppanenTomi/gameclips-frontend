@@ -246,7 +246,7 @@ article.game-thumb>img {
     margin-top: 20px;
 }
 
-#comment-box {
+.comment-box {
     width: 50%;
     height: 50px;
     font-family: 'Poppins', sans-serif;
@@ -666,7 +666,7 @@ article.game-thumb>img {
         padding: 10px;
     }
 
-    #comment-box {
+    .comment-box {
         width: 70%;
         height: 50px;
         font-family: 'Poppins', sans-serif;
