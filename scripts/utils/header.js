@@ -1,37 +1,58 @@
 'use strict';
 
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+const hamGue=document.querySelector("#ham-gue");
+const hamLog=document.querySelector("#ham-log");
+const gueNav=document.querySelector("#nav-gue");
+const logNav=document.querySelector("#nav-log");
 
-hamburger.addEventListener("click", () => {
 
-    hamburger.classList.toggle("active");
+hamGue.addEventListener("click", () => {
 
-    navMenu.classList.toggle("active");
+  hamGue.classList.toggle("active");
 
-  })
+  gueNav.classList.toggle("active");
 
-  document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+})
 
-    hamburger.classList.remove("active");
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
 
-    navMenu.classList.remove("active");
-    
-  }))
+  hamGue.classList.remove("active");
 
-  
+  gueNav.classList.remove("active");
+
+}))
+
+
+
+hamLog.addEventListener("click", () => {
+
+  hamLog.classList.toggle("active");
+
+  logNav.classList.toggle("active");
+
+})
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+
+  hamLog.classList.remove("active");
+
+  logNav.classList.remove("active");
+
+}))
+
+
 if (document.cookie.indexOf('token=')!=-1) {
   document.querySelectorAll('#guest').forEach(function (el) {
-      el.style.display='none';
+    el.style.display='none';
   });
   document.querySelectorAll('#logged').forEach(function (el) {
-      el.style.display='inherit';
+    el.style.display='inherit';
   });
 } else {
   document.querySelectorAll('#guest').forEach(function (el) {
-      el.style.display='inherit';
+    el.style.display='inherit';
   });
   document.querySelectorAll('#logged').forEach(function (el) {
-      el.style.display='none';
+    el.style.display='none';
   });
 }
